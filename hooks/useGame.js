@@ -47,6 +47,10 @@ export const GameContextProvider = ({ children }) => {
 
 	const resetState = () => {
 		return dispatch({ type: "reset" });
+	};
+
+	const makeStory = () => {
+
 	}
 
 	const value = {
