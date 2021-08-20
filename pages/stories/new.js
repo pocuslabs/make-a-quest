@@ -1,14 +1,19 @@
 import { useForm } from "react-hook-form"
+import { useDispatch } from "react-redux"
+import { useRouter } from "next/router"
 
-import useGame from "~/hooks/useGame"
+import { makeStory } from "~/features/game/gameSlice"
+
 import styles from "~/styles/pages/stories/new.module.css"
 
 export default function NewStoryPage(props) {
 	const { register, handleSubmit } = useForm();
-	const { state, setState } = useGame();
+	const dispatch = useDispatch();
+	const router = useRouter();
 
 	const submitHandler = ({ name }) => {
-		
+		dispatch(makeStory({ name }));
+		router.push("/stories");
 	};
 
 	return (

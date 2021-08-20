@@ -1,13 +1,15 @@
-import { GameContextProvider } from "~/hooks/useGame"
+import { Provider } from "react-redux"
+
+import store from '~/app/store'
 
 import "normalize.css"
 import '~/styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-		<GameContextProvider>
+		<Provider store={store}>
 			<Component {...pageProps} />
-		</GameContextProvider>
+	  </Provider>
 	);
 }
 
