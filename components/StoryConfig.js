@@ -12,7 +12,7 @@ export default function StoryConfig(props) {
 			<Link href="/stories/new"><a>+ Create a Storyline</a></Link>
 
 			{
-				stories.length ? (
+				Object.keys(stories).length ? (
 					Object.entries(stories).map(([id, story]) => (
 						<Story key={story.id} data={story} />
 					))
