@@ -1,5 +1,7 @@
-export default function NewQuestPage(props) {
+import NewQuestForm from "~/components/NewQuestForm"
+
+export default function NewQuestPage({ data }) {
 	return (
-		<div />
+		<NewQuestForm />
 	);
 }

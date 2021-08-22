@@ -1,5 +1,7 @@
-export default function QuestPage(props) {
+import Quest from "~/components/Quest"
+
+export default function QuestPage({ data }) {
 	return (
-		<div />
+		<Quest data={data} />
 	);
 }

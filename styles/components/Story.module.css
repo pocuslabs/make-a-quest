@@ -1,0 +1,13 @@
+.story {
+	border: 2px solid #00c;
+	padding: 0.75em;
+	display: flex;
+}
+
+.newQuest {
+	margin: 0 1em;
+	background: transparent;
+	border: 2px dashed darkgreen;
+	font-weight: bold;
+	cursor: pointer;
+}

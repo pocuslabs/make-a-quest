@@ -52,6 +52,17 @@ export const gameSlice = createSlice({
 
 		deleteStory(state, action) {
 			delete state.stories[action.payload];
+		},
+
+		makeQuest(state, action) {
+			const { story, quest } = action.payload;
+
+			const id = quest.id || uniqid();
+			state.stories[story].quests.push({
+				id,
+				name: "",
+				...quest
+			});
 		}
   },
 
@@ -71,7 +82,10 @@ export const gameSlice = createSlice({
   // },
 });
 
-export const { makeStory, setStory, updateStory, deleteStory } = gameSlice.actions;
+export const {
+	makeStory, setStory, updateStory, deleteStory,
+	makeQuest
+} = gameSlice.actions;
 
 // NOTE: for later
 //
