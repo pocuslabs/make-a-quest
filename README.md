@@ -1,34 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# make-a-quest
 
-## Getting Started
+make-a-quest is a prototype quest creation engine for a mock RPG, as a proof-of-concept for the larger effort I'm working on, [Adventure Kit](https://austinpocus.com/tags/adventure-kit).
 
-First, run the development server:
+## Notes
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+I'm using this proof-of-concept, in part, to learn more modern Redux usage with Redux Toolkit, as I've found that the context API and reducer-based state logic is no longer adequate for my needs.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The state is not currently saved anywhere except in your current session. If you refresh the page, **you will lose your data**. Saving what you've made is on my todo list, right after "The user should be able to set up a quest".
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The UI is nonexistent right now. Shield your eyes! I've put in some bare bones borders and padding, on a few components, but it's nothing even close to the final product yet. I haven't even picked fonts.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+In fact, nothing here is the final product yet -- treat this entire thing as a giant experimental work-in-progress. As such, there are no tests, no documentation to speak of aside from this README, no typing hints...this is a real prototype-stage codebase right now.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Contributing
 
-## Learn More
+If you'd like to contribute, I'd love to have some help! I'll lay out a more formal process eventually, but for now:
 
-To learn more about Next.js, take a look at the following resources:
+- Fork the repo.
+- Work on a feature branch on that fork.
+- Submit a PR when you're ready! (Or if you need to post a WIP PR, that's cool too.)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You may want to email me before you start, though -- my email is in [my Github profile](https://github.com/ajpocus). Please include "make-a-quest" or "Adventure Kit" in the subject.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Copyright 2021, Pocus Labs. Licensed under the MIT License. See the LICENSE file for details.
