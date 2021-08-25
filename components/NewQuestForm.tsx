@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+import { useRouter } from "next/router"
 import { useAppDispatch } from "~/app/hooks"
 
-import QuestComponent, { ComponentTemplates } from "~/components/QuestComponent"
+import QuestComponent from "~/components/QuestComponent"
+import QuestComponentTemplates from "~/templates/QuestComponentTemplates"
 import styles from "~/styles/components/NewQuestForm.module.css"
 
 export default function NewQuestForm(props) {

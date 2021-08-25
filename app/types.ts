@@ -45,6 +45,13 @@ export class QuestComponent {
 	constructor(componentType: QuestComponentType) {
 		this.componentType = componentType;
 	}
+
+	// TODO: implement a toString method that will fill in a template string with
+	// the quest component details (built from the componentType and props)
+}
+
+export interface QuestComponentTemplateIndex {
+	[key: QuestComponentType]: QuestComponent
 }
 
 export class Quest {
@@ -52,6 +59,8 @@ export class Quest {
 		this.name = name;
 		this.components = components;
 	}
+
+	// TODO: methods to update components
 }
 
 export interface QuestIndex {
