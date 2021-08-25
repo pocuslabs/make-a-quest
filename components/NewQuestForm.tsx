@@ -1,13 +1,13 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
-import { useDispatch } from "react-redux"
+import { useAppDispatch } from "~/app/hooks"
 
 import QuestComponent, { ComponentTemplates } from "~/components/QuestComponent"
 import styles from "~/styles/components/NewQuestForm.module.css"
 
 export default function NewQuestForm(props) {
 	const { register, handleSubmit } = useForm();
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 	const router = useRouter();
 	const components = useState([]);
 

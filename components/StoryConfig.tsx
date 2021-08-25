@@ -1,11 +1,11 @@
 import Link from "next/link"
-import { useSelector } from "react-redux"
+import { useAppSelector } from "~/app/hooks"
 
 import Story from "~/components/Story"
 import styles from "~/styles/components/StoryConfig.module.css"
 
 export default function StoryConfig(props) {
-	const stories = useSelector((state) => state.stories)
+	const stories = useAppSelector((state) => state.stories)
 
 	return (
 		<div className={styles.storyConfig}>
