@@ -1,7 +1,9 @@
 import uniqid from "uniqid";
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+import type GameState from "~/app/types";
+
+const initialState : GameState = {
   name: "",
 	stories: {}
 };
