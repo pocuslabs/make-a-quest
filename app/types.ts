@@ -41,9 +41,16 @@ export enum QuestComponentType {
 	Destroy
 }
 
+export class TalkQuestComponent {
+	
+}
+
 export class QuestComponent {
 	constructor(componentType: QuestComponentType) {
 		this.componentType = componentType;
+		const componentTypeString = `${this.componentType}QuestComponent`;
+
+		const makerFn = global[componentTypeString];
 	}
 
 	// TODO: implement a toString method that will fill in a template string with
