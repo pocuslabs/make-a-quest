@@ -1,60 +1,40 @@
 export const NOWHERE = -1;
 
-enum EntityType {
+export enum EntityType {
 	NPC,
 	Item
 };
 
-class Location {
-	// a Location's x and y refer to the tile where an Entity can be found
-	constructor(x = NOWHERE, y = NOWHERE) {
-		this.x = x;
-		this.y = y;
-	}
+export interface Location {
+	x: number;
+	y: number;
 }
 
-class Entity {
-	constructor(name, location) {
-		if (!name) {
-			throw new Error("You must pass a unique name to the NPC constructor.");
-		}
-
-		if (!location) {
-			location = new Location();
-		}
-
-		this.name = name;
-		this.location = location;
-	}
+export interface Entity {
+	name: string;
+	location: Location;
 }
 
-class NPC extends Entity {
-	constructor(name, location, { dialogue }) {
-		super(name, location);
-		this.dialogue = dialogue;
-	}
+export type Dialogue = object;
+
+export interface NPC extends Entity {
+	dialogue: Dialogue;
 }
 
-class Item extends Entity {
-	constructor(name, location, { properties }) {
-		super(name, location);
-		this.properties = properties;
-	}
+type PropertyType = string | number | boolean;
+
+export interface PropertyIndex {
+	[key: string]: PropertyType
 }
 
-class ItemProperties {
+export interface Item extends Entity {
+	properties: PropertyIndex
+}
+
+export class ItemProperties {
 	constructor(item, { })
 }
 
-class QuestComponent {
-	constructor(componentType) {
-		if (!componentType) {
-			throw new Error("You must pass a componentType parameter to the QuestComponent constructor.");
-		}
-
-		this.componentType = componentType;
-	}
-}
 export enum QuestComponentType {
 	Talk,
 	Fetch,
