@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useDispatch } from "react-redux"
 
-import QuestComponent from "~/components/QuestComponent"
+import QuestComponent, { ComponentTemplates } from "~/components/QuestComponent"
 import styles from "~/styles/components/NewQuestForm.module.css"
 
 export default function NewQuestForm(props) {
@@ -30,8 +30,8 @@ export default function NewQuestForm(props) {
 				<div className={styles.inputGroup}>
 					<div className={styles.panels}>
 						<div className={styles.componentPanel}>
-							{ComponentTemplates.map((component) => (
-								<QuestComponent key={component.id} data={component} />
+							{Object.entries(ComponentTemplates).map(([key, component]) => (
+								<QuestComponent key={key} data={component} />
 							))}
 						</div>
 
