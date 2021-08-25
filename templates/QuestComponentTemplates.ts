@@ -1,4 +1,4 @@
-import type { QuestComponentType, QuestComponent, QuestComponentTemplateIndex } from "~/app/types"
+import { QuestComponentType, QuestComponent, QuestComponentTemplateIndex } from "~/app/interfaces"
 
 const QuestComponentTemplates: QuestComponentTemplateIndex = {
 	[QuestComponentType.Talk]: new QuestComponent(QuestComponentType.Talk),
