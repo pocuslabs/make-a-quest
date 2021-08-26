@@ -3,13 +3,14 @@
  */
 
 import React from "react";
-import { render } from "~/test-utils";
+import { render, screen } from "~/test-utils";
  
 import NewStoryPage from "~/pages/stories/new";
 
 describe("NewStoryPage", () => {
     test("creates a quest for a story", () => {
         render(<NewStoryPage />);
+        expect(screen.getByRole("textbox")).toBeEnabled()
     });
 
     test.todo("the quest has at least one component");
