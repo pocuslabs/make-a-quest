@@ -32,7 +32,7 @@ export default function NewQuestForm(props) {
 				<div className={styles.inputGroup}>
 					<div className={styles.panels}>
 						<div className={styles.componentPanel}>
-							{Object.entries(ComponentTemplates).map(([key, component]) => (
+							{Object.entries(QuestComponentTemplates).map(([key, component]) => (
 								<QuestComponent key={key} data={component} />
 							))}
 						</div>

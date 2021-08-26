@@ -1,6 +1,6 @@
 import type { Dialogue } from "~/app/types"
 
-export const NOWHERE = -1;
+import { NOWHERE } from "~/app/constants"
 
 export enum EntityType {
 	NPC,
@@ -15,10 +15,15 @@ export interface Location {
 export interface Entity {
 	name: string;
 	location: Location;
+	toString: () => string;
 }
 
 export interface NPC extends Entity {
 	dialogue: Dialogue;
+}
+
+export interface Enemy extends Entity {
+	dialogue?: Dialogue;
 }
 
 type PropertyType = string | number | boolean;
@@ -32,30 +37,43 @@ export interface Item extends Entity {
 }
 
 export enum QuestComponentType {
-	Talk,
-	Fetch,
-	Destroy
+	Talk = "Talk",
+	Fetch = "Fetch",
+	Destroy = "Destroy"
 }
 
-export class TalkQuestComponent {
-	
+interface TalkQuestData {
+	npc: NPC
 }
 
-export const QuestComponentBuilder = {
-	build(componentType: QuestComponentType, data: any) {
-		this.componentType = componentType;
-		const componentTypeString = `${this.componentType}QuestComponent`;
+interface FetchQuestData {
+	item: Item;
+	npc?: NPC;
+}
 
-		const makerFn = globalThis[componentTypeString];
-		if (typeof makerFn !== "function") {
-			throw new Error(`Invalid component type ${componentTypeString}`);
-		}
+interface DestroyQuestData {
+	item?: Item;
+	enemy?: Enemy;
+	npc: NPC;
+}
 
-		return makerFn(data);
+export interface QuestComponent {
+	name: string;
+	isFulfilled: boolean;
+	data: any;
+	toString: () => string;
+}
+
+export class TalkQuestComponent implements QuestComponent {
+	constructor(name: string, data: TalkQuestData) {
+		this.name = name;
+		this.data = data;
+		this.isFulfilled = false;
 	}
 
-	// TODO: implement a toString method that will fill in a template string with
-	// the quest component details (built from the componentType and props)
+	toString() {
+		return this.name;
+	}
 }
 
 export interface QuestComponentTemplateIndex {
