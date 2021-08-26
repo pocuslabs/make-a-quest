@@ -34,7 +34,7 @@ export const gameSlice = createSlice({
 			const name = action.payload.name || "";
 			const slug = slugify(name);
 
-			state.stories[id] = {
+			state.stories[slug] = {
 				id,
 				name,
 				slug,
@@ -49,9 +49,9 @@ export const gameSlice = createSlice({
 
 		updateStory(state, action) {
 			const payload = action.payload;
-			let story = state.stories[payload.id];
+			let story = state.stories[payload.slug];
 			
-			state.stories[payload.id] = {
+			state.stories[payload.slug] = {
 				name: "",
 				quests: [],
 				...story,
@@ -65,7 +65,7 @@ export const gameSlice = createSlice({
 
 		makeQuest(state, action) {
 			const quest = action.payload;
-
+			console.log("A TRIBE CALLED QUEST", quest)
 			const id = quest.id || uniqid();
 			state.stories[quest.story].quests.push({
 				id,

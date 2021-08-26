@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useRouter } from "next/router"
+import slugify from "slugify"
 
 import { useAppDispatch } from "~/app/hooks"
 import { makeQuest } from "~/features/game/gameSlice"
@@ -12,7 +13,7 @@ export default function NewQuestForm(props) {
 	const { register, handleSubmit } = useForm();
 	const dispatch = useAppDispatch();
 	const router = useRouter();
-	const components = useState([]);
+	const [components, setComponents] = useState([]);
 
 	const submitHandler = ({ name }) => {
 		const story = router.query.storySlug;
@@ -21,7 +22,11 @@ export default function NewQuestForm(props) {
 			name,
 			components,
 			story
-		}))
+		}));
+
+		const quest = slugify(name);
+		const questUrl = `/stories/${story}/quests/${quest}`
+		router.push(questUrl);
 	};
 
 	return (
