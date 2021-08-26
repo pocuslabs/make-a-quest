@@ -76,6 +76,14 @@ export class TalkQuestComponent implements QuestComponent {
 	}
 }
 
+export class FetchQuestComponent implements QuestComponent {
+
+}
+
+export class DestroyQuestComponent implements QuestComponent {
+
+}
+
 export interface QuestComponentTemplateIndex {
 	[key: QuestComponentType]: QuestComponent
 }

@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useRouter } from "next/router"
-import { useAppDispatch } from "~/app/hooks"
 
+import { useAppDispatch } from "~/app/hooks"
+import { makeQuest } from "~/features/game/gameSlice"
 import QuestComponent from "~/components/QuestComponent"
 import QuestComponentTemplates from "~/templates/QuestComponentTemplates"
 import styles from "~/styles/components/NewQuestForm.module.css"
@@ -14,9 +15,12 @@ export default function NewQuestForm(props) {
 	const components = useState([]);
 
 	const submitHandler = ({ name }) => {
+		const story = router.query.storySlug;
+
 		dispatch(makeQuest({
 			name,
-			components
+			components,
+			story
 		}))
 	};
 
