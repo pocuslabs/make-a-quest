@@ -4,13 +4,25 @@ make-a-quest is a prototype quest creation engine for a mock RPG, as a proof-of-
 
 ## Notes
 
-I'm using this proof-of-concept, in part, to learn more modern Redux usage with Redux Toolkit, as I've found that the context API and reducer-based state logic is no longer adequate for my needs.
+This proof-of-concept serves as a showcase for my work, a testing ground for things I want to try like Redux and Typescript, but mostly, it serves as the proof of concept for Adventure Kit's story and quest creation system.
 
-The state is not currently saved anywhere except in your current session. If you refresh the page, **you will lose your data**. Saving what you've made is on my todo list, right after "The user should be able to set up a quest".
+The state is **not currently saved anywhere** except in your current session. If you refresh the page, **you will lose your data**. Saving what you've made is on my todo list, right after "The user should be able to set up a quest".
 
-The UI is nonexistent right now. Shield your eyes! I've put in some bare bones borders and padding, on a few components, but it's nothing even close to the final product yet. I haven't even picked fonts.
+The UI is nonexistent right now, and the data models are very incomplete. In fact, nothing here is the final product yet -- treat this entire thing as a giant experimental work-in-progress. As such, there are no tests, no documentation to speak of aside from this README...this is a real prototype-stage codebase right now.
 
-In fact, nothing here is the final product yet -- treat this entire thing as a giant experimental work-in-progress. As such, there are no tests, no documentation to speak of aside from this README, no typing hints...this is a real prototype-stage codebase right now.
+## Coming soon
+
+This section will be rewritten, hopefully with each PR, as I add functionality and fix bugs. Next up:
+
+- Test scaffolding
+- End-to-end tests for creating a story and creating a quest
+- Unit and integration tests for data models and their behavior
+
+More to come!
+
+## Progress updates
+
+Visit my personal blog, specifically [the "adventure-kit" tag on austinpocus.com](https://austinpocus.com/tags/adventure-kit), to get updates on the development process and my thoughts behind it.
 
 ## Contributing
 

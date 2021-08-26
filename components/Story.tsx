@@ -3,8 +3,8 @@ import Quest from "~/components/Quest"
 
 import styles from "~/styles/components/Story.module.css"
 
-export default function Story({ data: { id, name, quests = [] } }) {
-	const newQuestPath = `/stories/${id}/quests/new`;
+export default function Story({ data: { slug, name, quests = [] } }) {
+	const newQuestPath = `/stories/${slug}/quests/new`;
 
 	return (
 		<div className={styles.story}>
