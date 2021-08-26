@@ -38,7 +38,7 @@ export const gameSlice = createSlice({
 				id,
 				name,
 				slug,
-				quests: [],
+				quests: {},
 				...action.payload
 			};
 		},
@@ -53,7 +53,7 @@ export const gameSlice = createSlice({
 			
 			state.stories[payload.slug] = {
 				name: "",
-				quests: [],
+				quests: {},
 				...story,
 				...payload
 			};
@@ -67,11 +67,14 @@ export const gameSlice = createSlice({
 			const quest = action.payload;
 			console.log("A TRIBE CALLED QUEST", quest)
 			const id = quest.id || uniqid();
-			state.stories[quest.story].quests.push({
+			const name = quest.name || "";
+			const slug = slugify(name);
+			state.stories[quest.story].quests[slug] = {
 				id,
-				name: "",
+				name,
+				slug,
 				...quest
-			});
+			};
 		}
 	},
 
