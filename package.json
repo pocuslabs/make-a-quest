@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
@@ -32,11 +33,13 @@
     "@types/node": "^16.7.1",
     "@types/react": "^17.0.19",
     "babel-jest": "^27.0.6",
+    "cypress": "^8.3.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.1",
     "jest-sinon": "^1.0.4",
+    "next-router-mock": "^0.2.2",
     "react-test-renderer": "^17.0.2",
     "sinon": "^11.1.2",
     "typescript": "^4.3.5"
