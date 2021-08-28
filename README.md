@@ -14,9 +14,9 @@ The UI is nonexistent right now, and the data models are very incomplete. In fac
 
 This section will be rewritten, hopefully with each PR, as I add functionality and fix bugs. Next up:
 
-- Test scaffolding
-- End-to-end tests for creating a story and creating a quest
-- Unit and integration tests for data models and their behavior
+- Sensible templates for quest "components" (like "fetch item", "destroy enemy", etc.)
+- Quest creation UI
+- Story sequence UI
 
 More to come!
 
