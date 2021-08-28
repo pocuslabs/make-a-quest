@@ -20,7 +20,7 @@ export default function NewStoryPage(props) {
 		<div className={styles.newStory}>
 			<form onSubmit={handleSubmit(submitHandler)}>
 				<input type="text" {...register("name")} />
-				<button type="submit">Start the story</button>
+				<button type="submit">Start your story</button>
 			</form>
 		</div>
 	);

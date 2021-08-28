@@ -8,7 +8,7 @@ export default function Story({ data: { slug, name, quests = [] } }) {
 
 	return (
 		<div className={styles.story}>
-			<span className={styles.storyName}>{name}</span>
+			<h2 className={styles.storyName}>{name}</h2>
 			<div className={styles.verticalRule} />
 			<div className={styles.questList}>
 				{quests.length > 0 ? (

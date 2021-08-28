@@ -26,6 +26,7 @@ export default function NewQuestForm(props) {
 
 		const quest = slugify(name);
 		const questUrl = `/stories/${story}/quests/${quest}`
+		console.log("HEYYYYYY")
 		router.push(questUrl);
 	};
 
