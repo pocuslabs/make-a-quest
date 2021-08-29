@@ -1,3 +1,3 @@
 export default function QuestComponentTemplateRender({ component }) {
-  return <div></div>
+  return <div>{component?.name}</div>
 }

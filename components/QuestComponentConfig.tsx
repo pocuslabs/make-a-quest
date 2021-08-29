@@ -18,13 +18,12 @@ export default function QuestComponentConfig({ storySlug, questSlug }) {
 
         <div className={styles.questPanel}>
           {quest.components?.length ? (
-              quest.components.map((component, idx) => (
-                <QuestComponent key={idx} component={component} />
-              ))
-            ) : (
-              <button className={styles.addComponent}>+ Add Component</button>
-            )
-          }
+            quest.components.map((component, idx) => (
+              <QuestComponent key={idx} component={component} />
+            ))
+          ) : (
+            <button className={styles.addComponent}>+ Add Component</button>
+          )}
         </div>
       </div>
     </div>

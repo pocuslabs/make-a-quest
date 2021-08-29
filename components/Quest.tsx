@@ -11,7 +11,7 @@ export default function Quest({ storySlug, questSlug, fullView = false }) {
 				<h3 className={styles.nameHeading}>{quest.name}</h3>
 
 				{fullView && (
-					<QuestComponentConfig />
+					<QuestComponentConfig storySlug={storySlug} questSlug={questSlug} />
 				)}
 			</div>
 		) : (
