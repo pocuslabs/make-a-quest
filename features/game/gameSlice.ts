@@ -1,8 +1,8 @@
 import uniqid from "uniqid";
 import { createSlice } from '@reduxjs/toolkit';
-import slugify from "slugify";
+import { slugatron } from "~/helpers";
 
-import type GameState from "~/app/types";
+import type { GameState, Story } from "~/app/interfaces";
 
 const initialState : GameState = {
 	name: "",
@@ -30,10 +30,15 @@ export const gameSlice = createSlice({
 	initialState,
 	reducers: {
 		makeStory(state, action) {
-			const id = action.payload.id || uniqid();
-			const name = action.payload.name || "";
-			const slug = slugify(name);
+			const payload: Story = action.payload;
+			const id = payload.id || uniqid();
+			const name = payload.name || "";
+			const slug = slugatron(name);
 
+			if (!name?.length) {
+				throw new Error("Stories must have a name string property.")
+			}
+			
 			state.stories[slug] = {
 				id,
 				name,
@@ -44,16 +49,18 @@ export const gameSlice = createSlice({
 		},
 
 		setStory(state, action) {
-			state.stories[action.payload.slug] = action.payload;
+			const payload: Story = action.payload;
+			state.stories[payload.slug] = payload;
 		},
 
 		updateStory(state, action) {
-			const payload = action.payload;
+			const payload: Story = action.payload;
 			let story = state.stories[payload.slug];
+			if (!story.name?.length) {
+				throw new Error("Stories must have a name string property.")
+			}
 			
 			state.stories[payload.slug] = {
-				name: "",
-				quests: {},
 				...story,
 				...payload
 			};
@@ -68,7 +75,7 @@ export const gameSlice = createSlice({
 			console.log("A TRIBE CALLED QUEST", quest)
 			const id = quest.id || uniqid();
 			const name = quest.name || "";
-			const slug = slugify(name);
+			const slug = slugatron(name);
 			state.stories[quest.story].quests[slug] = {
 				id,
 				name,

@@ -1,4 +1,5 @@
 import * as allInterfaces from "~/app/interfaces"
+import type { QuestComponentType } from "~/app/interfaces"
 
 export const QuestComponentBuilder = {
 	build(componentType: QuestComponentType, name: string, data?: any) {

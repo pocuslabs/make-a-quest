@@ -111,7 +111,9 @@ export interface QuestIndex {
 }
 
 export interface Story {
+	id: string;
 	name: string;
+	slug: string;
 	quests: QuestIndex;
 }
 
