@@ -13,8 +13,8 @@ export default function StoryConfig(props) {
 
 			{
 				Object.keys(stories).length ? (
-					Object.entries(stories).map(([id, story]) => (
-						<Story key={story.id} data={story} />
+					Object.entries(stories).map(([slug, story]) => (
+						<Story key={slug} slug={slug} />
 					))
 				) : (
 					<p>No stories yet! Start by making one with the button at the top.</p>

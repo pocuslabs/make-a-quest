@@ -1,3 +1,11 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+header {
+  font-family: "Kaisei Tokumin", serif;
+}
