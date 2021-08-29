@@ -1,7 +1,5 @@
 import type { Dialogue } from "~/app/types"
 
-import { NOWHERE } from "~/app/constants"
-
 export enum EntityType {
 	NPC,
 	Item
@@ -65,6 +63,10 @@ export interface QuestComponent {
 }
 
 export class TalkQuestComponent implements QuestComponent {
+	name: string;
+	isFulfilled: boolean;
+	data: TalkQuestData;
+
 	constructor(name: string, data: TalkQuestData) {
 		this.name = name;
 		this.data = data;
@@ -77,18 +79,25 @@ export class TalkQuestComponent implements QuestComponent {
 }
 
 export class FetchQuestComponent implements QuestComponent {
-
+	name: string;
+	isFulfilled: boolean;
+	data: FetchQuestData;
 }
 
 export class DestroyQuestComponent implements QuestComponent {
-
+	name: string;
+	isFulfilled: boolean;
+	data: DestroyQuestComponent;
 }
 
-export interface QuestComponentTemplateIndex {
-	[key: QuestComponentType]: QuestComponent
+export type QuestComponentTemplateIndex = {
+	[key in QuestComponentType]: QuestComponent
 }
 
 export class Quest {
+	name: string;
+	components?: Array<QuestComponent>
+
 	constructor(name: string, components?: Array<QuestComponent>) {
 		this.name = name;
 		this.components = components;
