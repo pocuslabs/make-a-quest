@@ -6,7 +6,7 @@ make-a-quest is a prototype quest creation engine for a mock RPG, as a proof-of-
 
 This proof-of-concept serves as a showcase for my work, a testing ground for things I want to try like Redux and Typescript, but mostly, it serves as the proof of concept for Adventure Kit's story and quest creation system.
 
-The state is **not currently saved anywhere** except in your current session. If you refresh the page, **you will lose your data**. Saving what you've made is on my todo list, right after "The user should be able to set up a quest".
+The state is currently saved in localstorage in your browser. If you clear your browser data, **you will lose your stories and quests**.
 
 The UI is nonexistent right now, and the data models are very incomplete. In fact, nothing here is the final product yet -- treat this entire thing as a giant experimental work-in-progress. As such, there are no tests, no documentation to speak of aside from this README...this is a real prototype-stage codebase right now.
 
