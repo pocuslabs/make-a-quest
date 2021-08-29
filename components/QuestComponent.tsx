@@ -1,13 +1,9 @@
-import { useDrag } from 'react-dnd'
-
 import styles from "~/styles/components/QuestComponent.module.css"
 
-const ITEM_TYPE = "questComponent";
-
-export default function QuestComponentRender({ data }) {
-	return (
+export default function QuestComponentRender({ component }) {
+	return component ? (
 		<div className={styles.questComponent}>
-
+			{component.name}
 		</div>
-	)
+	) : null
 }

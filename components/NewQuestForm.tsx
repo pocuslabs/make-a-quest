@@ -26,7 +26,6 @@ export default function NewQuestForm(props) {
 
 		const quest = slugify(name);
 		const questUrl = `/stories/${story}/quests/${quest}`
-		console.log("HEYYYYYY")
 		router.push(questUrl);
 	};
 
@@ -37,22 +36,6 @@ export default function NewQuestForm(props) {
 					<input type="text" {...register("name", {
 						required: true
 					})} />
-				</div>
-
-				<div className={styles.inputGroup}>
-					<div className={styles.panels}>
-						<div className={styles.componentPanel}>
-							{Object.entries(QuestComponentTemplates).map(([key, component]) => (
-								<QuestComponent key={key} data={component} />
-							))}
-						</div>
-
-						<div className={styles.questPanel}>
-							{components.map((component) => (
-								<QuestComponent key={component.id} data={component} />
-							))}
-						</div>
-					</div>
 				</div>
 			</form>
 		</div>

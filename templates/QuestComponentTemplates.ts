@@ -1,4 +1,4 @@
-import { QuestComponentType, QuestComponent, QuestComponentTemplateIndex } from "~/app/interfaces"
+import { QuestComponentType, QuestComponentTemplateIndex } from "~/app/interfaces"
 import { QuestComponentBuilder } from "~/builders/QuestComponentBuilder"
 
 const QuestComponentTemplates: QuestComponentTemplateIndex = {
