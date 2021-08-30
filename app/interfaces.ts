@@ -82,12 +82,20 @@ export class FetchQuestComponent implements QuestComponent {
 	name: string;
 	isFulfilled: boolean;
 	data: FetchQuestData;
+
+	constructor(name: string) {
+		this.name = name;
+	}
 }
 
 export class DestroyQuestComponent implements QuestComponent {
 	name: string;
 	isFulfilled: boolean;
 	data: DestroyQuestComponent;
+
+	constructor(name: string) {
+		this.name = name;
+	}
 }
 
 export type QuestComponentTemplateIndex = {

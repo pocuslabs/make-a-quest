@@ -2,3 +2,9 @@
   display: flex;
 }
 
+.componentPanel {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
+  padding: 1em;
+}

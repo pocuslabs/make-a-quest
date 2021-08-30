@@ -15,19 +15,18 @@ export default function Story({ slug }) {
 				<header><h2 className={styles.storyName}>{story.name}</h2></header>
 				<div className={styles.verticalRule} />
 				<div className={styles.questList}>
-					{Object.keys(story.quests).length > 0 ? (
+					{Object.keys(story.quests).length > 0 && (
 						Object.entries(story.quests).map(([questSlug, quest]) => (
 							<Quest key={quest.slug} storySlug={slug} questSlug={questSlug} />
 						))
-					) : (
-						<Link href={newQuestPath}>
-							<a>
-								<button className={styles.newQuest}>
-									+ Add a Quest
-								</button>
-							</a>
-						</Link>
 					)}
+					<Link href={newQuestPath}>
+						<a>
+							<button className={styles.newQuest}>
+								+ Add a Quest
+							</button>
+						</a>
+					</Link>
 				</div>
 			</div>
 		) : (

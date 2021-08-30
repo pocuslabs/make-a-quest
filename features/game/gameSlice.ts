@@ -1,8 +1,8 @@
-import uniqid from "uniqid";
-import { createSlice } from '@reduxjs/toolkit';
-import { slugatron } from "~/helpers";
+import uniqid from "uniqid"
+import { createSlice } from '@reduxjs/toolkit'
+import slugify from "slugify"
 
-import type { GameState, Story } from "~/app/interfaces";
+import type { GameState, Story } from "~/app/interfaces"
 
 const initialState : GameState = {
 	name: "",
@@ -33,7 +33,7 @@ export const gameSlice = createSlice({
 			const payload: Story = action.payload;
 			const id = payload.id || uniqid();
 			const name = payload.name || "";
-			const slug = slugatron(name);
+			const slug = slugify(name);
 
 			if (!name?.length) {
 				throw new Error("Stories must have a name string property.")
@@ -72,10 +72,9 @@ export const gameSlice = createSlice({
 
 		makeQuest(state, action) {
 			const quest = action.payload;
-			console.log("A TRIBE CALLED QUEST", quest)
 			const id = quest.id || uniqid();
 			const name = quest.name || "";
-			const slug = slugatron(name);
+			const slug = slugify(name);
 			state.stories[quest.story].quests[slug] = {
 				id,
 				name,
